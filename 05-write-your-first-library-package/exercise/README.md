@@ -1,4 +1,4 @@
-[Check out the exercise and its solution here.](https://github.com/inancgumus/learngo/tree/master/05-write-your-first-library-package/exercise)
+[Check out the exercise and its solution here.](https://github.com/inancgumus/learngo/tree/master/04-write-your-first-library-package/exercise)
 
 ---
 
