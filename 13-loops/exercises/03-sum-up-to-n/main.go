@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Sum up to N
 //
@@ -36,4 +42,38 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args
+	sum := 0
+	if len(args) != 3 {
+		fmt.Println("Usage main [min] [max]")
+		return
+	}
+	num1, err := strconv.ParseInt(args[1], 10, 64)
+	if err != nil {
+		fmt.Println("Invalid [min] number")
+		return
+	}
+
+	num2, err := strconv.ParseInt(args[2], 10, 64)
+	if err != nil {
+		fmt.Println("Invalid [min] number")
+		return
+	}
+
+	if num1 > num2 {
+		fmt.Println("Make sure [min] < [max]")
+		return
+	}
+
+	for i := num1; i <= num2; i++ {
+
+		fmt.Print(i)
+		sum += int(i)
+
+		if i != num2 {
+			fmt.Print(" + ")
+		}
+
+	}
+	fmt.Println(" = ", sum)
 }

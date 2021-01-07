@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Infinite Kill
 //
@@ -53,4 +58,14 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var chars = [4]byte{'\\', '-', '/', '|'}
+	i := 0
+	for {
+
+		curr_item := chars[i%4]
+		fmt.Printf("%c Please Wait. Processing....\r", curr_item)
+		time.Sleep(time.Duration(250) * time.Millisecond)
+		i++
+	}
+
 }

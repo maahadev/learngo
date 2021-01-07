@@ -54,4 +54,19 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	print(" X ")
+	for i := 0; i <= 1; i++ {
+		print(" ", i, " ")
+	}
+	println("")
+
+	for i := 0; i <= 1; i++ {
+		print(" ", i, " ")
+		for j := 0; j <= 1; j++ {
+			print(" ", i*j, " ")
+
+		}
+		print("\n")
+	}
+
 }
