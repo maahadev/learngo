@@ -16,6 +16,7 @@ package main
 //  2. Observe whether something happens when you don't
 //     use it
 // ---------------------------------------------------------
+var i int
 
 func main() {
 }

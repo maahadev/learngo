@@ -22,4 +22,6 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var isLiquid bool
+	var _ = isLiquid
 }

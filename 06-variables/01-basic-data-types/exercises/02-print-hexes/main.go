@@ -44,26 +44,10 @@ import "fmt"
 
 func main() {
 	// EXAMPLES:
-
-	// I'm going to print 10 in hexadecimal
-	fmt.Println(0xa)
-
-	// I'm going to print 16 in hexadecimal
-	// 0x10
-	//   ^^-----  1 * 0 = 0
-	//   |
-	//   +------ 16 * 1 = 16
-	//                  = 16
-	fmt.Println(0x10)
-
-	// I'm going to print 150 in hexadecimal
-	// 0x96
-	//   ^^-----  1 * 6 = 6
-	//   |
-	//   +------ 16 * 9 = 144
-	//                  = 150
-	fmt.Println(0x96)
-
-	// COMMENT-OUT ALL THE CODE ABOVE, THEN,
-	// ADD YOUR OWN SOLUTIONS BELOW
+	fmt.Println(0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9)
+	fmt.Println(0xA, 0xB, 0xC, 0xD, 0xE, 0xF)
+	fmt.Println(0x11)
+	fmt.Println(0x19)
+	fmt.Println(0x32)
+	fmt.Println(0x64)
 }

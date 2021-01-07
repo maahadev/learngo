@@ -8,21 +8,21 @@
 
 package main
 
-// ---------------------------------------------------------
-// EXERCISE: Print the literals
-//
-//  1. Print a few integer literals
-//
-//  2. Print a few float literals
-//
-//  3. Print true and false bool literals
-//
-//  4. Print your name using a string literal
-//
-//  5. Print a non-english sentence using a string literal
-//
-// ---------------------------------------------------------
+import "fmt"
 
 func main() {
-	// Use fmt.Println()
-}
+	// ---------------------------------------------------------
+	// EXERCISE: Print the literals
+	//
+	//  1. Print a few integer literals
+	fmt.Println(1, 2, 3, -1, -2, -3, 0)
+	//
+	//  2. Print a few float literals
+	fmt.Println(1.0, -3.0, -333)
+	//  3. Print true and false bool literals
+	fmt.Println(true, false)
+	//  4. Print your name using a string literal
+	fmt.Println("Mahesh Regmi")
+	//  5. Print a non-english sentence using a string literal
+	fmt.Println("नेपाली शब्दका अङ्गेजी अर्थहरु तथा अङ्गेजी शब्दका नेपाली अर्थहरु खोज्न यो सुविधा प्रयोग गर्नुहोस्। यस अन्तरगत ६० हजार बढी शब्दहरु खोज्न सक्नुहुनेछ।")
+} // ---------------------------------------------------------

@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Multiple #2
 //
@@ -28,9 +30,9 @@ package main
 func main() {
 	// ADD YOUR DECLARATION HERE
 	//
-
+	str1, str2 := "", ""
 	// REPLACE THE QUESTION-MARKS BELOW
 	// WITH THE NAME OF YOUR VARIABLES
 
-	// fmt.Printf("%q %q\n", ?, ?)
+	fmt.Printf("%q %q\n", str1, str2)
 }

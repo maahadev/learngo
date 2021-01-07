@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Short Discard
 //
@@ -29,8 +31,8 @@ package main
 func main() {
 	// ADD YOUR DECLARATIONS HERE
 	//
-
+	on, off := true, false
 	// THEN UNCOMMENT THE CODE BELOW
-
-	// fmt.Println(on)
+	var _ = off
+	fmt.Println(on)
 }
