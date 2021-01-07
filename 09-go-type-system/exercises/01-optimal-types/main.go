@@ -36,16 +36,17 @@ func main() {
 	// ---
 
 	// an english letter (search web for: ascii control code)
-
+	var englishLetter byte
 	// a non-english letter (search web for: unicode codepoint)
-
+	var nonEnglishLetter rune
 	// a year in 4 digits like 2040
-
+	var year uint8
 	// a month in 2 digits: 1 to 12
-
+	var month uint8
 	// the speed of the light
-
+	var speedOfLight float64
 	// angle of a circle
-
+	var angle float64
 	// PI number: 3.141592653589793
+	var PI float64
 }
