@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Richter Scale #2
 //
@@ -67,4 +72,32 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	if len(os.Args) == 1 {
+		fmt.Println("Tell me the magnitude of earthquake")
+		return
+	}
+	switch r := os.Args[1]; r {
+	case "micro":
+		fmt.Println("micro's richter scale is less than 2.0")
+	case "very minor":
+		fmt.Println("very minor's richter scale is 2 - 2.9")
+	case "minor":
+		fmt.Println("minor's richter scale is 3 - 3.9")
+	case "light":
+		fmt.Println("very minor's richter scale is 4 - 4.9")
+	case "moderate":
+		fmt.Println("moderate's richter scale is 5 - 5.9")
+	case "strong":
+		fmt.Println("strong's richter scale is 6 - 6.9")
+	case "major":
+		fmt.Println("great's richter scale is 7 - 7.9")
+	case "great":
+		fmt.Println("great's richter scale is 8 - 8.9")
+	case "massive":
+		fmt.Println("massive's richter scale is 9 - 9.9")
+	default:
+		fmt.Println("I didn't recon that value")
+
+	}
+
 }

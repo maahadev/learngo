@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // STORY
 //  You want to write a program that will manipulate a
@@ -42,7 +48,26 @@ package main
 //  go run main.go genius "mr. charles darwin"
 //    Unknown command: "genius"
 // ---------------------------------------------------------
-
 func main() {
+	args := os.Args
+	if len(args) != 3 {
+		fmt.Println("Please enter all arguments")
+		return
+	}
+	command, str := args[1], args[2]
+
+	switch command {
+	case "lower":
+		str = strings.ToLower(str)
+		fmt.Println(str)
+	case "upper":
+		str = strings.ToUpper(str)
+		fmt.Println(str)
+	case "title":
+		str = strings.ToTitle(str)
+		fmt.Println(str)
+	default:
+		fmt.Println("I don't understand that command")
+	}
 
 }

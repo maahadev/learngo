@@ -37,27 +37,58 @@ func main() {
 
 	days, month := 28, os.Args[1]
 
-	if m := strings.ToLower(month); m == "april" ||
-		m == "june" ||
-		m == "september" ||
-		m == "november" {
+	//	if m := strings.ToLower(month); m == "april" ||
+	//		m == "june" ||
+	//		m == "september" ||
+	//		m == "november" {
+	//		days = 30
+	//	} else if m == "january" ||
+	//		m == "march" ||
+	//		m == "may" ||
+	//		m == "july" ||
+	//		m == "august" ||
+	//		m == "october" ||
+	//		m == "december" {
+	//		days = 31
+	//	} else if m == "february" {
+	//		if leap {
+	//			days = 29
+	//		}
+	//	} else {
+	//		fmt.Printf("%q is not a month.\n", month)
+	//		return
+	//	}
+	switch m := strings.ToLower(month); m {
+
+	case "june":
+		fallthrough
+	case "september":
+		fallthrough
+	case "november":
 		days = 30
-	} else if m == "january" ||
-		m == "march" ||
-		m == "may" ||
-		m == "july" ||
-		m == "august" ||
-		m == "october" ||
-		m == "december" {
+	case "january":
+		fallthrough
+	case "march":
+		fallthrough
+	case "may":
+		fallthrough
+	case "july":
+		fallthrough
+	case "august":
+		fallthrough
+	case "october":
+		fallthrough
+	case "december":
 		days = 31
-	} else if m == "february" {
+	case "february":
 		if leap {
 			days = 29
+		} else {
+			days = 28
 		}
-	} else {
-		fmt.Printf("%q is not a month.\n", month)
+	default:
+		fmt.Println("%q is not a month.\n", month)
 		return
 	}
-
 	fmt.Printf("%q has %d days.\n", month, days)
 }

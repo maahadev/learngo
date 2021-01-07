@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // STORY
 //  You're curious about the richter scales. When reporters
@@ -71,4 +77,36 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args
+	if len(args) == 1 {
+		fmt.Println("Please provide me the argument")
+		return
+	}
+	richter_scale, err := strconv.ParseFloat(args[1], 64)
+	if err == nil {
+		switch r := richter_scale; {
+		case r <= 0.5:
+			fmt.Printf("%.2f is micro.", r)
+		case r <= 2.5:
+			fmt.Printf("%.2f is very minor.", r)
+		case r <= 3:
+			fmt.Printf("%.2f is minor.", r)
+		case r <= 4.5:
+			fmt.Printf("%.2f is light.", r)
+		case r <= 5:
+			fmt.Printf("%.2f is moderate.", r)
+		case r <= 6:
+			fmt.Printf("%.2f is strong.", r)
+		case r <= 7:
+			fmt.Printf("%.2f is major.", r)
+		case r <= 8:
+			fmt.Printf("%.2f is great.", r)
+		case r <= 11:
+			fmt.Printf("%.2f is massive.", r)
+		default:
+			fmt.Printf("Not found any checks for it")
+		}
+
+	}
+
 }
