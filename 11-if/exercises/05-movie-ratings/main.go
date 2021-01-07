@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // STORY
 //
@@ -53,4 +59,20 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	if len(os.Args) == 2 {
+		ratingNumber, _ := strconv.ParseInt(os.Args[1], 10, 64)
+
+		if ratingNumber > 17 {
+			fmt.Println("R-Rated")
+		} else if ratingNumber > 13 {
+			fmt.Println("PG-13")
+		} else if ratingNumber >= 0 {
+			fmt.Println("PG-Rated")
+		} else {
+			fmt.Println("No negative values, please")
+
+		}
+	} else {
+		fmt.Println("No number found")
+	}
 }
