@@ -25,8 +25,11 @@ import "fmt"
 // EXPECTED OUTPUT
 //  There are 840 hours in 5 weeks.
 // ---------------------------------------------------------
+const hoursInDay int = 24
+const DaysInWeek int = 7
+const hoursPerWeek int = hoursInDay * DaysInWeek
 
 func main() {
 	fmt.Printf("There are %d hours in %d weeks.\n",
-		24*7*5, 5)
+		hoursPerWeek*5, 5)
 }
