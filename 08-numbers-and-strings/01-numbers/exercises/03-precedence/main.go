@@ -21,24 +21,28 @@ import "fmt"
 
 func main() {
 	// This expression should print 20
-	fmt.Println(10 + 5 - 5 - 10)
 
-	// This expression should print -16
-	fmt.Println(-10 + 0.5 - 1 + 5.5)
+	fmt.Println(10 + 5 - (5 - 10))
 
-	// This expression should print -25
-	fmt.Println(5 + 10*2 - 5)
+	// -10 + 0.5 - 1 + 5.5
+	fmt.Println(-10 + 0.5 - (1 + 5.5))
 
-	// This expression should print 0.5
-	fmt.Println(0.5*2 - 1)
+	// 5 + 10*2 - 5
+	fmt.Println(5 + 10*(2-5))
 
-	// This expression should print 24
-	fmt.Println(3 + 1/2*10 + 4)
+	// 0.5*2 - 1
+	fmt.Println(0.5 * (2 - 1))
 
-	// This expression should print 15
-	fmt.Println(10 / 2 * 10 % 7)
+	// 3 + 1/2*10 + 4
+	fmt.Println((3+1)/2*10 + 4)
 
-	// This expression should print 40
-	// Note that you may need to use floats to solve this
-	fmt.Println(100 / 5 / 2)
+	// 10 / 2 * 10 % 7
+	fmt.Println(10 / 2 * (10 % 7))
+
+	// 100 / 5 / 2
+	// 5  / 2 = 2
+	//  5 and 2 are integers, so, the fractional part drops
+	// 5. / 2 = 2.5
+	//  because 5. is a float, so the result becomes a float
+	fmt.Println(100 / (5. / 2))
 }

@@ -33,10 +33,10 @@ func main() {
 	// why use other verbs than? because: type-safety
 	// uncomment to see the warnings:
 	//
-	// fmt.Printf("Planet: %d\n", planet)
-	// fmt.Printf("Distance: %s millions kms\n", distance)
-	// fmt.Printf("Orbital Period: %t days\n", orbital)
-	// fmt.Printf("Does %v has life? %f\n", planet, hasLife)
+	fmt.Printf("Planet: %d\n", planet)
+	fmt.Printf("Distance: %s millions kms\n", distance)
+	fmt.Printf("Orbital Period: %t days\n", orbital)
+	fmt.Printf("Does %v has life? %f\n", planet, hasLife)
 
 	// correct verbs:
 	// fmt.Printf("Planet: %s\n", planet)
