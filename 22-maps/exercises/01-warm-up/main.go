@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Warm-up
 //
@@ -24,23 +26,19 @@ package main
 //
 // ---------------------------------------------------------
 
+var (
+	phone_number         map[string]uint64
+	product_availability map[int]bool
+	phone_numbers        map[string]*int64
+	shopping_basket      map[string]struct {
+		quantity  int
+		item_name string
+	}
+)
+
 func main() {
-	// Hint: Store phone numbers as text
-
-	// #1
-	// Key        : Last name
-	// Element    : Phone number
-
-	// #2
-	// Key        : Product ID
-	// Element    : Available / Unavailable
-
-	// #3
-	// Key        : Last name
-	// Element    : Phone numbers
-
-	// #4
-	// Key        : Customer ID
-	// Element Key:
-	//   Key: Product ID Element: Quantity
+	fmt.Println(phone_number)
+	fmt.Println(product_availability)
+	fmt.Println(phone_numbers)
+	fmt.Println(shopping_basket)
 }

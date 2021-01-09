@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Students
 //
@@ -52,25 +57,29 @@ package main
 //
 // ---------------------------------------------------------
 
+var students = map[string][]string{
+	"gryffinder": {"weasley", "hagrid", "dumbledore", "lupin"},
+	"hufflepuf":  {"wenlock", "scamander", "helga", "diggory"},
+	"ravenclaw":  {"bagnold", "wildsmith", "montmorency", "horace"},
+	"slytherin":  {"horace", "nigellus", "higgs", "scorpius"},
+	"bobo":       {"wizardry", "unwanted"},
+}
+
 func main() {
-	// House        Student Name
-	// ---------------------------
-	// gryffindor   weasley
-	// gryffindor   hagrid
-	// gryffindor   dumbledore
-	// gryffindor   lupin
-	// hufflepuf    wenlock
-	// hufflepuf    scamander
-	// hufflepuf    helga
-	// hufflepuf    diggory
-	// ravenclaw    flitwick
-	// ravenclaw    bagnold
-	// ravenclaw    wildsmith
-	// ravenclaw    montmorency
-	// slytherin    horace
-	// slytherin    nigellus
-	// slytherin    higgs
-	// slytherin    scorpius
-	// bobo         wizardry
-	// bobo         unwanted
+
+	if len(os.Args) != 2 {
+		fmt.Println("Please provide a house name.")
+		return
+	}
+
+	item, found := students[os.Args[1]]
+	if !found {
+		fmt.Println("Not Found")
+		return
+	}
+	for _, name := range item {
+
+		fmt.Printf("+ %s\n", name)
+
+	}
 }

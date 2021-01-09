@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Populate and Lookup
 //
@@ -32,17 +34,17 @@ package main
 //  2. Product availability by Product ID
 //     ----------------
 //     617841573 true
-//     879401371 false
-//     576872813 true
+//    879401371 false
+//   576872813 true
 //
 //     Is Product ID 879401371 available?
 //
 //
 //  3. Multiple phone numbers by last name
 //     ------------------------------------------------------
-//     bowen  [202-555-0179]
-//     dulin  [03.37.77.63.06 03.37.70.50.05 02.20.40.10.04]
-//     greco  [03489940240 03489900120]
+//"bowen" :   ["202-555-0179"],
+//"dulin" :   ["03.37.77.63.06", "03.37.70.50.05",  "02.20.40.10.04" ],
+//"greco" :   ["03489940240" ,  "03489900120"],
 //
 //     What is Greco's second phone number?
 //
@@ -69,5 +71,35 @@ package main
 //
 // ---------------------------------------------------------
 
+var (
+	phone_number         map[string]string
+	product_availability map[int]bool
+	phone_numbers        map[string][]string
+	shopping_basket      map[string]struct {
+		quantity  int
+		item_name string
+	}
+)
+
 func main() {
+	phone_number = map[string]string{
+		"bowen": "202-555-0179",
+		"dulin": "03.37.77.63.",
+		"greco": "03489940240",
+	}
+	fmt.Println(phone_number)
+
+	product_availability = map[int]bool{
+		617841573: true,
+		879401371: false,
+		576872813: true,
+	}
+	fmt.Println(product_availability)
+
+	phone_numbers = map[string]([]string){
+
+		"bowen": []string{"202-555-0179"},
+		"dulin": []string{"03.37.77.63.06", "03.37.70.50.05", "02.20.40.10.04"},
+		"greco": []string{"03489940240", "03489900120"},
+	}
 }
