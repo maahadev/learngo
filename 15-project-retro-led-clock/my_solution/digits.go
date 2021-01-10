@@ -150,3 +150,18 @@ var nine digit = []string{
 }
 
 var digits = [...]*digit{&zero, &one, &two, &three, &four, &five, &six, &seven, &eight, &nine}
+
+var seperator digit = []string{
+
+	"             ",
+	"     █ █     ",
+	"      █      ",
+	"     █ █     ",
+	"             ",
+	"             ",
+	"     █ █     ",
+	"      █      ",
+	"     █ █     ",
+	"             ",
+	"             ",
+}

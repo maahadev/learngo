@@ -10,16 +10,68 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"time"
+
+	"github.com/inancgumus/screen"
 )
 
 func main() {
 
-	digitPrinter(1337)
+	for {
+		screen.Clear()
+		screen.MoveTopLeft()
+		hour, minute, second := getCurrentTime()
+		hour_arr, minute_arr, second_arr := digitToTwoNumberArray(hour), digitToTwoNumberArray(minute), digitToTwoNumberArray(second)
+		clockPrinter(hour_arr, minute_arr, second_arr)
+		time.Sleep(1 * time.Second)
+	}
+
 }
 
-func digitPrinter(num int) {
+func clockPrinter(hour, minute, second []int) {
 
-	numbers := make([]int, 0)
+	fmt.Print("\n\n")
+	for i := 0; i <= 10; i++ {
+
+		fmt.Print((*digits[hour[0]])[i])
+		fmt.Print(" ")
+		fmt.Print((*digits[hour[1]])[i])
+		fmt.Print(" ")
+
+		if second[1]%2 == 0 {
+			fmt.Print((seperator[i]))
+		} else {
+			fmt.Print(strings.Repeat(" ", 13))
+		}
+
+		fmt.Print((*digits[minute[0]])[i])
+		fmt.Print(" ")
+		fmt.Print((*digits[minute[1]])[i])
+		fmt.Print(" ")
+
+		if second[1]%2 == 0 {
+			fmt.Print((seperator[i]))
+		} else {
+			fmt.Print(strings.Repeat(" ", 13))
+
+		}
+		fmt.Print((*digits[second[0]])[i])
+		fmt.Print(" ")
+		fmt.Print((*digits[second[1]])[i])
+		fmt.Print(" ")
+
+		fmt.Println("")
+	}
+
+}
+
+func digitToTwoNumberArray(num int) []int {
+
+	numbers := make([]int, 0, 2)
+	if num == 0 {
+		return []int{0, 0}
+	}
 
 	for num > 0 {
 		digit := num % 10
@@ -27,18 +79,16 @@ func digitPrinter(num int) {
 		numbers = append(numbers, digit)
 	}
 
-	digitCount := len(numbers)
-	for i := 0; i <= 10; i++ {
-
-		for j, _ := range numbers {
-
-			v := numbers[digitCount-j-1]
-
-			fmt.Print((*digits[v])[i] + " ")
-
-		}
-
-		fmt.Println("")
+	if len(numbers) == 1 {
+		return []int{0, numbers[0]}
 	}
+	return []int{numbers[1], numbers[0]}
+
+}
+
+func getCurrentTime() (int, int, int) {
+
+	currentTime := time.Now()
+	return currentTime.Hour(), currentTime.Minute(), currentTime.Second()
 
 }
