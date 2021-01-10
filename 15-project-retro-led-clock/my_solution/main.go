@@ -22,43 +22,42 @@ func main() {
 		screen.Clear()
 		screen.MoveTopLeft()
 		hour, minute, second := getCurrentTime()
-		hour_arr, minute_arr, second_arr := digitToTwoNumberArray(hour), digitToTwoNumberArray(minute), digitToTwoNumberArray(second)
-		clockPrinter(hour_arr, minute_arr, second_arr)
+		clockPrinter(hour, minute, second)
 		time.Sleep(1 * time.Second)
 	}
 
 }
 
-func clockPrinter(hour, minute, second []int) {
+func clockPrinter(hour, minute, second int) {
 
 	fmt.Print("\n\n")
 	for i := 0; i <= 10; i++ {
 
-		fmt.Print((*digits[hour[0]])[i])
+		fmt.Print((*digits[hour/10])[i])
 		fmt.Print(" ")
-		fmt.Print((*digits[hour[1]])[i])
+		fmt.Print((*digits[hour%10])[i])
 		fmt.Print(" ")
 
-		if second[1]%2 == 0 {
+		if (second%10)%2 == 0 {
 			fmt.Print((seperator[i]))
 		} else {
 			fmt.Print(strings.Repeat(" ", 13))
 		}
 
-		fmt.Print((*digits[minute[0]])[i])
+		fmt.Print((*digits[minute/10])[i])
 		fmt.Print(" ")
-		fmt.Print((*digits[minute[1]])[i])
+		fmt.Print((*digits[minute%10])[i])
 		fmt.Print(" ")
 
-		if second[1]%2 == 0 {
+		if (second%10)%2 == 0 {
 			fmt.Print((seperator[i]))
 		} else {
 			fmt.Print(strings.Repeat(" ", 13))
 
 		}
-		fmt.Print((*digits[second[0]])[i])
+		fmt.Print((*digits[second/10])[i])
 		fmt.Print(" ")
-		fmt.Print((*digits[second[1]])[i])
+		fmt.Print((*digits[second%10])[i])
 		fmt.Print(" ")
 
 		fmt.Println("")
